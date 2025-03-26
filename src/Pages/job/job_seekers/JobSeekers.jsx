@@ -1,27 +1,77 @@
 import React, { useState } from 'react';
-
-// Sample data for job seekers
+import IM1 from '../../../Assets/alice.jpeg'
+import IM2 from '../../../Assets/mike.webp'
+import IM3 from '../../../Assets/pela.avif'
 const jobSeekersData = [
     {
         id: 1,
         name: 'Alice Johnson',
         skills: ['JavaScript', 'React', 'Node.js'],
         rating: 4.5,
-        image: 'https://via.placeholder.com/150',
+        image: IM1,
     },
     {
         id: 2,
         name: 'Bob Smith',
         skills: ['Python', 'Django', 'Flask'],
         rating: 4.0,
-        image: 'https://via.placeholder.com/150',
+        image: IM2,
     },
     {
         id: 3,
         name: 'Carol Williams',
         skills: ['Java', 'Spring', 'Hibernate'],
         rating: 4.8,
-        image: 'https://via.placeholder.com/150',
+        image: IM3,
+    },
+    {
+        id: 4,
+        name: 'David Brown',
+        skills: ['C#', 'ASP.NET', 'SQL Server'],
+        rating: 4.6,
+        image: IM3,
+    },
+    {
+        id: 5,
+        name: 'Emma Davis',
+        skills: ['PHP', 'Laravel', 'MySQL'],
+        rating: 4.2,
+        image: IM2,
+    },
+    {
+        id: 6,
+        name: 'Frank Miller',
+        skills: ['Go', 'Golang', 'Microservices'],
+        rating: 4.7,
+        image: IM1,
+    },
+    {
+        id: 7,
+        name: 'Grace Wilson',
+        skills: ['Swift', 'iOS Development', 'Objective-C'],
+        rating: 4.9,
+        image: IM3,
+    },
+    {
+        id: 8,
+        name: 'Henry Lee',
+        skills: ['Ruby', 'Ruby on Rails', 'PostgreSQL'],
+        rating: 4.3,
+        image: IM1,
+    },
+    {
+        id: 9,
+        name: 'Ivy Martinez',
+        skills: ['TypeScript', 'Angular', 'Vue.js'],
+        rating: 4.4,
+        image: IM3,
+    },
+    {
+        id: 10,
+        name: 'Jack Thompson',
+        skills: ['Kotlin', 'Android Development', 'Java'],
+        rating: 4.5,
+        image: IM1,
     },
 ];
 

@@ -14,9 +14,11 @@ import Service from "./Pages/servicedetails/Service";
 function App() {
   const {currentUser}=useAuth()
   return (
+
     <>
         <Routes>
             <Route path='/' element={<Home />} />
+            <Route exact path="/employer" element={<EmployerPage />} />
             <Route exact path="/servicedetails" element={<Service />} />
             <Route exact path="/viewfreelancers" element={<JobSeeker />} />
             <Route exact path="/createjob" element={<JobCreationForm />} />
@@ -25,6 +27,7 @@ function App() {
         </Routes>
       
     </>
+
   );
 }
 
