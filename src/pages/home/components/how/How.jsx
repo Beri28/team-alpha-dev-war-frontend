@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@mui/material';
+import { Card, CardContent, Typography, Grid, Grid2 } from '@mui/material';
 import { CheckCircle, AccountCircle, Payment } from '@mui/icons-material';
 
 const HowItWorksSection = () => {
@@ -22,33 +22,35 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-100 max-w-[80%] mx-auto">
-      <div className="text-center mb-12">
-        <Typography variant="h3" className="text-3xl md:text-4xl font-bold text-primary">
-          How It Works
-        </Typography>
-        <Typography variant="body1" className="mt-4 text-lg text-gray-700">
-          A simple 3-step process to get started with freelance work in Cameroon.
-        </Typography>
-      </div>
+    <section className="py-16 bg-gray-100 ">
+      <div className='max-w-[80%] mx-auto'>
+        <div className="text-center mb-12">
+          <Typography variant="h3" className="text-3xl md:text-4xl font-bold text-primary">
+            How It Works
+          </Typography>
+          <Typography variant="body1" className="mt-4 text-lg text-gray-700">
+            A simple 3-step process to get started with freelance work in Cameroon.
+          </Typography>
+        </div>
 
-      <Grid container spacing={6} sx={{px:3}} justifyContent="center">
-        {steps.map((step, index) => (
-          <Grid item xs={12} sm={4} key={index}>
-            <Card className="shadow-lg rounded-lg">
-              <CardContent className="flex flex-col items-center p-8">
-                <div className="mb-6">{step.icon}</div>
-                <Typography variant="h6" className="font-semibold text-xl mb-4 text-primary">
-                  {step.title}
-                </Typography>
-                <Typography variant="body2" className="text-gray-600 text-center">
-                  {step.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+        <Grid container spacing={6} justifyContent="center">
+          {steps.map((step, index) => (
+            <Grid item xs={12} sm={4} key={index}>
+              <Card className="shadow-lg rounded-lg">
+                <CardContent className="flex flex-col items-center p-8">
+                  <div className="mb-6">{step.icon}</div>
+                  <Typography variant="h6" className="font-semibold text-xl mb-4 text-primary">
+                    {step.title}
+                  </Typography>
+                  <Typography variant="body2" className="text-gray-600 text-center">
+                    {step.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </section>
   );
 };
