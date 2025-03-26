@@ -29,41 +29,62 @@
 // }
 
 // export default Hero;
-import React from 'react';
+
+import React from "react";
+import { Button } from "@mui/material";
+import img from '../../../../assets/imgs/images8.png'
 import './hero.css'
 
 const HeroSection = () => {
+
   return (
-    <section
-      className="relative w-full h-screen bg-cover bg-center hero"
-    //   style={{
-    //     backgroundImage: "url('https://images.unsplash.com/photo-1515109061117-2f1a3fd09b58?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5NzN8MHx8c2VhcmNofDg2fHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNjYzOTgxMTQw&ixlib=rb-1.2.1&q=80&w=1080')",
-    //   }}
-    >
-      <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-6 sm:px-12 lg:px-20 h-full">
-        <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 tracking-tight">
-          Find Top Freelancers or Get Hired in Seconds
-        </h1>
-        <p className="text-xl sm:text-2xl mb-8 max-w-3xl">
-          The best place to hire talented freelancers for every project. Whether you need a developer, designer, writer, or marketer, we have you covered.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="#get-started"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
-          >
-            Get Started
-          </a>
-          <a
-            href="#browse"
-            className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
-          >
-            Browse Freelancers
-          </a>
+    // <div className="flex items-center relative p-16 bg-white h-96 bg-cover bg-center"
+    //      style={{ backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent), url('path/to/your/background-image.jpg')" }}>
+    //   <div className="relative z-10 mr-8">
+    //     <h1 className="text-4xl font-bold mb-4">Transforming Your Ideas into Reality</h1>
+    //     <p className="text-lg mb-4">We bring your vision to life with expert freelance services.</p>
+    //     <Button variant="contained" color="primary" size="large">
+    //       Get Started
+    //     </Button>
+    //   </div>
+    //   <div className="absolute rounded-full bg-gray-300 w-72 h-72 z-0 top-1/3 left-2/3 transform -translate-x-1/2 -translate-y-1/2"></div>
+    //   <div className="absolute rounded-full bg-gray-400 w-72 h-72 z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    //   <div className="absolute rounded-full bg-red-500 w-72 h-72 z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    //   <div className="absolute rounded-full bg-red-600 w-80 h-80 z-0 top-1/2 left-1/2 transform -translate-x-1/3 -translate-y-1/4 opacity-80"></div>
+    //   <div className="absolute rounded-full bg-red-700 w-64 h-64 z-0 top-1/2 left-1/2 transform translate-x-1/4 translate-y-1/4 opacity-60"></div>
+    //   <img 
+    //     src={img}
+    //     alt="Working Professional" 
+    //     className="relative z-10 w-full max-w-xs rounded-lg" 
+    //   />
+    // </div>
+    // <div className="bg-cover bg-center  hero h-[80vh]">
+    //   <div className="max-w-[80%] mx-auto relative py-16 bg-gray-100 opacity-90 h-full overflow-hidden">
+    <div className=" h-[80vh]">
+      <div className="max-w-[80%] mx-auto relative py-16 bg-white h-full overflow-hidden shadow-lg">
+        <div className="relative z-10 sm:w-1/2 flex flex-col justify-center h-full  px-4">
+          <h1 className="text-4xl font-bold text-black mb-4 text-start">Join the largest freelance marketplace in Cameroon</h1>
+          <p className="text-lg text-gray-700 mb-4 text-center">Join Cameroon's trusted freelancing platform. Secure payments, reliable jobs, and seamless conncections-all in one place.</p>
+          <div className="flex items-center justify-center gap-x-3">
+            <Button variant="contained" color="primary" size="medium" style={{ backgroundColor: '#4A5568' }}>
+              Join Us Now
+            </Button>
+            <Button variant="outlined" color="inherit" size="medium" style={{ color: '#4A5568',borderColor:'4A5568' }}>
+              Find Work
+            </Button>
+          </div>
         </div>
+        <div className="absolute rounded-full bg-gray-300 w-73 h-73 z-12 top-[35%] left-[88%] transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute rounded-full bg-gray-200 w-80 h-80 z-12 top-[37%] left-[60%] transform -translate-x-1/3 -translate-y-1/4 opacity-80"></div>
+        <div className="absolute rounded-full bg-gray-100 w-64 h-64 z-12 top-[35%] left-[74%] transform translate-x-1/4 translate-y-1/4 opacity-60"></div>
+        <div className="absolute z-11 rounded-full bg-gray-500 w-5xl h-[1024px] top-[-20em] left-[23.5%] transform translate-x-1/4 translate-y-1/4 opacity-60"></div>
+        <img 
+          src={img} 
+          alt="Working Professional" 
+          className="absolute z-20 w-full max-w-xl rounded-lg left-[55%] top-[15%]" 
+        />
       </div>
-    </section>
+    </div>
   );
 };
 
