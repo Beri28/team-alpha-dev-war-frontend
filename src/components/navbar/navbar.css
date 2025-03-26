@@ -1,0 +1,13 @@
+.links li:hover{
+    transform: scale(1.1);
+    transition:500ms;
+}
+/* .css-1cmet5c-MuiInputBase-root-MuiInput-root::before{
+    border: none!important;
+} */
+.MuiInputBase-root::before{
+    display: none!important;
+}
+.MuiInputBase-root::after{
+    display: none!important;
+}

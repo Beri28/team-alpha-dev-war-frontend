@@ -1,10 +1,16 @@
 import React from "react";
+import { useAuth } from "./context/authContext";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
 
 function App() {
-//   const {currentUser}=useAuth()
+  const {currentUser}=useAuth()
   return (
     <>
-      <p>Hello</p>
+        <Routes>
+            <Route path='/' element={<Home />} />
+        </Routes>
+      
     </>
   );
 }
