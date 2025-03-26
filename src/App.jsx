@@ -14,11 +14,13 @@ import FreelancersShowcase from "./pages/Gigs/Gigs";
 function App() {
   const {currentUser}=useAuth()
   return (
+
     <>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/gigs' element={<FreelancersShowcase />} />
             <Route path='/gigDetail' element={<FreelancersShowcase />} />
+            <Route exact path="/employer" element={<EmployerPage />} />
             <Route exact path="/servicedetails" element={<Service />} />
             <Route exact path="/viewfreelancers" element={<JobSeeker />} />
             <Route exact path="/createjob" element={<JobCreationForm />} />
@@ -27,6 +29,7 @@ function App() {
         </Routes>
       
     </>
+
   );
 }
 
