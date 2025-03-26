@@ -1,0 +1,71 @@
+.error {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: black 1px solid;
+    outline: none;
+    font-size: 1rem;
+}
+
+.login-container {
+    max-height: max-content;
+    max-width: 350px;
+    margin: 5rem auto 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem; /* Consider using rem or em */
+    margin-bottom: 20px;
+}
+
+.login-container button {
+    font-size: 1.2rem; /* Consider using rem or em */
+    margin: 30px;
+    text-align: center;
+    width: 20vw;
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgb(76, 160, 193), rgb(134, 205, 229), rgb(215, 63, 193));
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background: linear-gradient(to right, rgb(134, 205, 229), rgb(215, 63, 193), rgb(76, 160, 193));
+}
+
+.login-container button:focus {
+    outline: 2px solid rgb(76, 160, 193); /* Add focus style */
+}
+
+.signup {
+    text-align: center;
+    margin-top: 90px;
+}
+
+@media (max-width: 1000px) {
+    .login-container button {
+        width: 80%;
+    }
+    
+    .login-container {
+        max-width: 70%;
+        height: fit-content;
+        max-height: 90vh;
+        margin: 150px auto 0;
+        padding: 10px;
+    }
+}
