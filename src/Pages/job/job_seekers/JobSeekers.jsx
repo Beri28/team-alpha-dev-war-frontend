@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-
-// Sample data for job seekers
+import IM1 from '../../../Assets/alice.jpeg'
+import IM2 from '../../../Assets/mike.webp'
+import IM3 from '../../../Assets/pela.avif'
 const jobSeekersData = [
     {
         id: 1,
         name: 'Alice Johnson',
         skills: ['JavaScript', 'React', 'Node.js'],
         rating: 4.5,
-        image: 'https://via.placeholder.com/150',
+        image: IM1,
     },
     {
         id: 2,
         name: 'Bob Smith',
         skills: ['Python', 'Django', 'Flask'],
         rating: 4.0,
-        image: 'https://via.placeholder.com/150',
+        image: IM2,
     },
     {
         id: 3,
         name: 'Carol Williams',
         skills: ['Java', 'Spring', 'Hibernate'],
         rating: 4.8,
-        image: 'https://via.placeholder.com/150',
+        image: IM3,
     },
 ];
 
