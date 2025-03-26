@@ -23,10 +23,10 @@ const JobCreationForm = () => {
         });
     };
 
-    return (
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white rounded shadow-md">
+    return (<div className='bg-gray-100 min-h-screen flex items-center justify-center'>
+        <form onSubmit={handleSubmit} className="max-w-lg w-full p-6 bg-white rounded shadow-md">
             <h2 className="text-2xl font-bold mb-4">Create Job Posting</h2>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Job Title</label>
                 <input
@@ -37,7 +37,7 @@ const JobCreationForm = () => {
                     required
                 />
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Job Description</label>
                 <textarea
@@ -48,7 +48,7 @@ const JobCreationForm = () => {
                     required
                 />
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Skills Required</label>
                 <input
@@ -59,7 +59,7 @@ const JobCreationForm = () => {
                     className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-500"
                 />
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Budget</label>
                 <input
@@ -70,7 +70,7 @@ const JobCreationForm = () => {
                     required
                 />
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Job Type</label>
                 <select
@@ -85,7 +85,7 @@ const JobCreationForm = () => {
                     <option value="freelance">Freelance</option>
                 </select>
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Deadline</label>
                 <input
@@ -95,7 +95,7 @@ const JobCreationForm = () => {
                     className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-500"
                 />
             </div>
-
+    
             <div className="mb-4">
                 <label className="block text-gray-700">Contact Information</label>
                 <input
@@ -105,7 +105,7 @@ const JobCreationForm = () => {
                     className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-500"
                 />
             </div>
-
+    
             <button
                 type="submit"
                 className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
@@ -113,6 +113,7 @@ const JobCreationForm = () => {
                 Submit Job
             </button>
         </form>
+    </div>
     );
 };
 
