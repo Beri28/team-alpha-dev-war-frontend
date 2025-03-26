@@ -1,6 +1,8 @@
 import React from 'react';
 import './GetStarted.css'
 import img from '../../../../assets/imgs/images6.jpg'
+import { Link } from 'react-router-dom';
+
 const GetStarted = () => {
   return (
     <section className="text-white bg">
@@ -14,18 +16,16 @@ const GetStarted = () => {
               Whether you're a business in need of top talent or a freelancer looking for your next project, our platform connects you with the right opportunities.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
-              <a
-                href="#sign-up"
+              <Link to ="/signup"
                 className="bg-white text-blue-600 hover:bg-blue-100 hover:text-blue-700 font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
               >
                 Sign Up Now
-              </a>
-              <a
-                href="#learn-more"
+              </Link>
+              <Link to="/learn-more"
                 className="bg-transparent border-2 border-white text-white hover:border-blue-600 hover:text-blue-600 font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex-1 w-full max-w-md mx-auto lg:mx-0">
