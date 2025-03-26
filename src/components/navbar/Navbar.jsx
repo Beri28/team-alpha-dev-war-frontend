@@ -86,7 +86,7 @@ function Navbar() {
                 <div className='max-w-[70%] sm:flex hidden justify-between items-center gap-x-[10em]'>
                     <ul className='list-none flex items-center gap-x-10 links cursor-pointer'>
                         <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/hire">Hire</Link></li>
+                        <li><Link to="/createjob">Create Job</Link></li>
                         <li><Link to="/about"> About Us</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>

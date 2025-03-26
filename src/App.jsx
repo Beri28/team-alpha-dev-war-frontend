@@ -11,6 +11,7 @@ import EmployerPage from "./Pages/employers/Employers";
 
 import Service from "./Pages/servicedetails/Service";
 import FreelancersShowcase from "./pages/Gigs/Gigs";
+import FreelancerDetail from "./components/gig/GigDetail";
 function App() {
   const {currentUser}=useAuth()
   return (
@@ -19,7 +20,7 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/gigs' element={<FreelancersShowcase />} />
-            <Route path='/gigDetail' element={<FreelancersShowcase />} />
+            <Route path='/gigDetail' element={<FreelancerDetail />} />
             <Route exact path="/employer" element={<EmployerPage />} />
             <Route exact path="/servicedetails" element={<Service />} />
             <Route exact path="/viewfreelancers" element={<JobSeeker />} />
