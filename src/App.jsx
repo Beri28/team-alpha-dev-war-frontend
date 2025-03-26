@@ -12,9 +12,8 @@ function App() {
   //   const {currentUser}=useAuth()
   return (
     <div>
-
       <Routes>
-        <Route exact path="/" element={<EmployerPage />}/>
+        <Route exact path="/employer" element={<EmployerPage />} />
         <Route exact path="/servicedetails" element={<Service />} />
         <Route exact path="/viewfreelancers" element={<JobSeeker />} />
         <Route exact path="/createjob" element={<JobCreationForm />} />

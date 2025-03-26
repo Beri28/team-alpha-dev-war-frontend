@@ -24,6 +24,55 @@ const jobSeekersData = [
         rating: 4.8,
         image: IM3,
     },
+    {
+        id: 4,
+        name: 'David Brown',
+        skills: ['C#', 'ASP.NET', 'SQL Server'],
+        rating: 4.6,
+        image: IM3,
+    },
+    {
+        id: 5,
+        name: 'Emma Davis',
+        skills: ['PHP', 'Laravel', 'MySQL'],
+        rating: 4.2,
+        image: IM2,
+    },
+    {
+        id: 6,
+        name: 'Frank Miller',
+        skills: ['Go', 'Golang', 'Microservices'],
+        rating: 4.7,
+        image: IM1,
+    },
+    {
+        id: 7,
+        name: 'Grace Wilson',
+        skills: ['Swift', 'iOS Development', 'Objective-C'],
+        rating: 4.9,
+        image: IM3,
+    },
+    {
+        id: 8,
+        name: 'Henry Lee',
+        skills: ['Ruby', 'Ruby on Rails', 'PostgreSQL'],
+        rating: 4.3,
+        image: IM1,
+    },
+    {
+        id: 9,
+        name: 'Ivy Martinez',
+        skills: ['TypeScript', 'Angular', 'Vue.js'],
+        rating: 4.4,
+        image: IM3,
+    },
+    {
+        id: 10,
+        name: 'Jack Thompson',
+        skills: ['Kotlin', 'Android Development', 'Java'],
+        rating: 4.5,
+        image: IM1,
+    },
 ];
 
 const JobSeeker = () => {
