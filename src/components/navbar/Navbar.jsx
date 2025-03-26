@@ -1,6 +1,6 @@
 import { Close, Search } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu'
-import { Avatar, Box, Button, Divider, FormControl, Input, MenuItem, Stack} from '@mui/material';
+import { Avatar, Box, Button, Divider, FormControl, Input, MenuItem, Select, Stack} from '@mui/material';
 import React, { useContext, useState } from 'react';
 import './navbar.css'
 import {  useAuth } from '../../context/authContext';
@@ -14,6 +14,7 @@ function Navbar() {
     const handleMenuClose=()=>{
 
     }
+    const [dateFilter,setDateFilter]=useState('today')
     const MenuCustom=()=>{
         return (
             <Box sx={{position:'absolute',top:'3em',right:'9.7em'}}>
@@ -53,10 +54,10 @@ function Navbar() {
         )
     }
     return (
-        <div className='py-4 sticky w-full bg-white z-50 top-0'>
+        <div className='py-4 sticky w-full bg-gray-50 z-50 top-0'>
             <div className='max-w-[80%] flex mx-auto justify-between items-center'>
                 <div className='logo max-w-[15%]'>
-                    <p className='text-2xl font-extrabold'><Link to="/"><span className='text-green-700'>Ya</span>hustle</Link></p>
+                    <p className='text-2xl font-extrabold'><Link to="/"><span className='text-gray-500'>Ya</span><span className='text-gray-600'>hustle</span></Link></p>
                 </div>
                 {currentUser.isAuthenticated?
                 <div className='max-w-[70%] w-[100%] sm:flex hidden justify-end items-center gap-x-8'>
@@ -82,11 +83,12 @@ function Navbar() {
                     </div>
                 </div>
                 :
-                <div className='max-w-[70%] w-[100%] sm:flex hidden justify-between items-center gap-x-8'>
+                <div className='max-w-[70%] sm:flex hidden justify-between items-center gap-x-[10em]'>
                     <ul className='list-none flex items-center gap-x-10 links cursor-pointer'>
+                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/hire">Hire</Link></li>
                         <li><Link to="/about"> About Us</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/hire">Hire</Link></li>
                     </ul>
                     <FormControl sx={{display:{md:'flex',sm:'none'}}} className='relative'>
                         <Input

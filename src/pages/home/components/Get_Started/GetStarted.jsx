@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const GetStarted = () => {
   return (
-    <section className="text-white bg">
+    <section className="text-white bg h-[40%]">
       <div className="bg-[#00000080] mx-auto py-16">
         <div className="max-w-[80%] mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0">
           <div className="flex-1 text-center lg:text-left">
