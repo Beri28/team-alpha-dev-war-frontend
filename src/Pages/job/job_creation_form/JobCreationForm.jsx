@@ -3,6 +3,7 @@ import Navbar from '../../../Components/navbar/Navbar';
 import Footer from '../../../Components/footer/Footer';
 import { Box, Button, Chip, Paper } from '@mui/material';
 import { Add } from '@mui/icons-material';
+import { Get, Post } from '../../../functions/apiCalls';
 
 const JobCreationForm = () => {
     const [jobTitle, setJobTitle] = useState('');
@@ -14,7 +15,7 @@ const JobCreationForm = () => {
     const [deadline, setDeadline] = useState('');
     const [contactInfo, setContactInfo] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault();
         // Handle form submission logic here
         console.log({
@@ -26,16 +27,30 @@ const JobCreationForm = () => {
             deadline,
             contactInfo,
         });
+        try {
+            // const resp=await Post('/jobs/jobs',{
+            //     title: "Software Developer",
+            //     description: "We are looking for a software developer to join our team.",
+            //     skills: ["JavaScript", "React", "Node.js"],
+            //     budget: 5000,
+            //     deadline: "2025-06-30",
+            //     contactInfo: "contact@example.com"
+            // })
+            const resp=await Get('job/jobs')
+            console.log(resp)
+        } catch (error) {
+            console.log(error)
+        }
     };
 
     return (
         <>
         <Navbar />
         <div className='max-w-[80%] mx-auto'>
-            <form onSubmit={handleSubmit} className=" p-6 my-8 bg-white rounded shadow-md">
+            <form className=" p-6 my-8 bg-white rounded shadow-md">
                 <Box sx={{width:'100%',display:'flex',justifyContent:'space-between',alignItems:'center',mb:2}}>
                     <h2 className="text-2xl font-medium mb-4 text-gray-800">Create Job Posting</h2>
-                    <Button variant='outlined' size='small' color='inherit'>Create</Button>
+                    <Button variant='outlined' size='small' color='inherit' onClick={(e)=>handleSubmit(e)}>Create</Button>
                 </Box>
                 <Box sx={{width:'100%',display:{sm:'flex',xs:'block'},columnGap:{sm:'1em',xs:'0em'},mb:2}}>
                     <Paper sx={{p:4,width:'100%'}}>

@@ -61,8 +61,8 @@ const HeroSection = () => {
     // <div className="bg-cover bg-center  hero h-[80vh]">
     //   <div className="max-w-[80%] mx-auto relative py-16 bg-gray-100 opacity-90 h-full overflow-hidden">
     <div className=" h-[80vh]">
-      <div className="max-w-[80%] mx-auto relative py-16 bg-white h-full overflow-hidden shadow-lg">
-        <div className="relative z-10 sm:w-1/2 flex flex-col justify-center h-full  px-4">
+      <div className="sm:max-w-[80%] max-w-[90%] mx-auto relative py-16 bg-white h-full overflow-hidden sm:shadow-lg">
+        <div className="relative sm:z-10 z-30 sm:w-1/2 flex flex-col justify-center h-full  px-4">
           <h1 className="text-4xl font-bold text-black mb-4 text-start">Join the largest freelance marketplace in Cameroon</h1>
           <p className="text-lg text-gray-700 mb-4 text-center">Join Cameroon's trusted freelancing platform. Secure payments, reliable jobs, and seamless conncections-all in one place.</p>
           <div className="flex items-center justify-center gap-x-3">
