@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import IM1 from '../../../Assets/alice.jpeg'
 import IM2 from '../../../Assets/mike.webp'
 import IM3 from '../../../Assets/pela.avif'
+import IM4 from '../../../Assets/jai.jpeg'
+import IM5 from '../../../Assets/james.jpeg'
+import IM6 from '../../../Assets/janty.jpg'
+import IM7 from '../../../Assets/nel.jpg'
+import IM8 from '../../../Assets/leo.jpg'
 const jobSeekersData = [
     {
         id: 1,
@@ -29,35 +34,35 @@ const jobSeekersData = [
         name: 'David Brown',
         skills: ['C#', 'ASP.NET', 'SQL Server'],
         rating: 4.6,
-        image: IM3,
+        image: IM4,
     },
     {
         id: 5,
         name: 'Emma Davis',
         skills: ['PHP', 'Laravel', 'MySQL'],
         rating: 4.2,
-        image: IM2,
+        image: IM5,
     },
     {
         id: 6,
         name: 'Frank Miller',
         skills: ['Go', 'Golang', 'Microservices'],
         rating: 4.7,
-        image: IM1,
+        image: IM6,
     },
     {
         id: 7,
         name: 'Grace Wilson',
         skills: ['Swift', 'iOS Development', 'Objective-C'],
         rating: 4.9,
-        image: IM3,
+        image: IM7,
     },
     {
         id: 8,
         name: 'Henry Lee',
         skills: ['Ruby', 'Ruby on Rails', 'PostgreSQL'],
         rating: 4.3,
-        image: IM1,
+        image: IM8,
     },
     {
         id: 9,
