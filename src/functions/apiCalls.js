@@ -7,6 +7,7 @@ const headers={
     'Content-Type': 'application/json',
 }
 export async function Get(endpoint){
+    console.log(endpoint)
     try {
         const config = {
             method: 'get',
@@ -23,6 +24,7 @@ export async function Get(endpoint){
     }
 }
 export async function Post(endpoint,data){
+    console.log(endpoint)
     try {
         const config = {
             method: 'post',
@@ -44,8 +46,8 @@ export async function Payment(data){
     try {
         const config = {
             method: 'post',
-            // url: baseUrl+`/initiate-pay`,
-            url: `/${endpoint}`,
+            // url: baseUrl+`/api/v1/initiate-pay`,
+            url: `/api/v1/initiate-pay`,
             headers: headers,
             data: JSON.stringify(data)
         }
@@ -62,8 +64,8 @@ export async function PaymentStatus(paymentId){
     try {
         const config = {
             method: 'post',
-            // url: baseUrl+`/payment_statusy`,
-            url: `/${endpoint}`,
+            url: baseUrl+`/api/v1/payment_status`,
+            // url: `/api/v1/payment_status`,
             headers: headers,
             data: JSON.stringify(data)
         }
