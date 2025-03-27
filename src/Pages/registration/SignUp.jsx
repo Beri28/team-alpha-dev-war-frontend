@@ -28,7 +28,7 @@ function SignUp() {
 
    async function handleSubmit(values,{resetForm}){
       setLoading(true)
-    try{ const response = await axios.post('http://localhost:3000/api/v1/auth/signup',values,{headers:{
+    try{ const response = await axios.post('https://yahustle.onrender/api/v1/auth/signup',values,{headers:{
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }}) 
