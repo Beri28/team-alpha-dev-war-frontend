@@ -10,8 +10,8 @@ export async function Get(endpoint){
     try {
         const config = {
             method: 'get',
-            url: baseUrl+`${endpoint}`,
-            // url: endpoint,
+            // url: baseUrl+`/${endpoint}`,
+            url: `/${endpoint}`,
         }
         const response = await axios(config)
         if(response.status===200) return response
@@ -26,8 +26,8 @@ export async function Post(endpoint,data){
     try {
         const config = {
             method: 'post',
-            url: baseUrl+`${endpoint}`,
-            // url: endpoint,
+            // url: baseUrl+`${endpoint}`,
+            url: `/${endpoint}`,
             headers: headers,
             data: JSON.stringify(data)
         }
@@ -44,8 +44,8 @@ export async function Payment(data){
     try {
         const config = {
             method: 'post',
-            url: baseUrl+`/initiate-pay`,
-            // url: endpoint,
+            // url: baseUrl+`/initiate-pay`,
+            url: `/${endpoint}`,
             headers: headers,
             data: JSON.stringify(data)
         }
@@ -62,8 +62,8 @@ export async function PaymentStatus(paymentId){
     try {
         const config = {
             method: 'post',
-            url: baseUrl+`/payment_statusy`,
-            // url: endpoint,
+            // url: baseUrl+`/payment_statusy`,
+            url: `/${endpoint}`,
             headers: headers,
             data: JSON.stringify(data)
         }

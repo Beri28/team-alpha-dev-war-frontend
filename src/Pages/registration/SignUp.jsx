@@ -1,21 +1,18 @@
 import React, { useState } from 'react'
-// import "./registration.css"
+import "./registration.css"
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import {  Link } from'react-router-dom';
+import {  data, Link, useNavigate } from'react-router-dom';
 import { ErrorMessage, Field, Formik,Form } from 'formik';
 import * as  Yup from "yup"
+import axios from 'axios';
 import { useAuth } from '../../context/authContext';
-import { Post } from '../../functions/apiCalls';
 function SignUp() {
   const {Login}=useAuth()
-    // const [email,setEmail]=useState('')
-    // const [name,setName]=useState('')
-    // const [telephone,setTelephone]=useState(0)
-    // const [password,setPassword]=useState('')
+    const navigate = useNavigate()
     const validationSchema= Yup.object({
       name: Yup.string()
        .required('User Name is Required'),
-      telephone: Yup.string()
+      phone: Yup.string()
        .required('Phone Number is Required'),
       email: Yup.string()
        .email('Invalid email')
@@ -29,22 +26,40 @@ function SignUp() {
 
     })
     const [loading,setLoading] = useState(false)
-    // console.log("Clicked")
-    // console.log(email,name,telephone,password)
 
-   async function handleSubmit(values){
+
+   async function handleSubmit(values,{resetForm}){
+      setLoading(true)
       console.log(values)
-        console.log("submit clicked");
+    try{ const response = await axios.post('https://yahustle.onrender/api/v1/auth/signup',values,{headers:{
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }}) 
+  const data = response.data
+  localStorage.getItem(data.token)
+  navigate('/login')
+  resetForm()
+      
+  setLoading(false)
+  }
+    catch(error){
+        console.log(error)
+        setLoading(false)
+        alert('Error signing up')
+        resetForm()
+      
+      }
+     
     }
         
   return (
-    <div className='body max-w-[80%] mx-auto'>
-    <div className='login-container max-w-[80%] mx-auto'>
+    <div className='body'>
+    <div className='login-container'>
       <h1>SignUp</h1>
       <Formik
       initialValues={{
         name:'',
-        telephone:'',
+        phone:'',
         email:'',
         password:'',
         confirm_password:'',
@@ -61,7 +76,7 @@ function SignUp() {
       <ErrorMessage name="name" component="div" className="error" />  
       <label  htmlFor="l3">Phone</label><br />
       <Field className="input" id="l3" name="phone" type="text" placeholder= "Phone" />
-      <ErrorMessage name="telephone" component="div" className="error" />
+      <ErrorMessage name="phone" component="div" className="error" />
       <br />
       <label htmlFor="l2">Email</label><br />
       <Field className="input" id="l2" type="email" name="email" placeholder= "example@gmail.com" />
@@ -80,36 +95,6 @@ function SignUp() {
       </Form>
       )}
       </Formik>
-      {/* <form action="" className=" mt-4 border p-5 rounded-2" onSubmit={(e)=>{handleSubmit(e)}}>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" className="form-control" value={name} onChange={(e)=>{setName(e.target.value)}} name="username" placeholder="Enter username" required/>
-                    <div className="form-text"></div>
-                </div>
-                <div className="form-text text-danger"></div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" className="form-control" name="email" placeholder="Enter email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required />
-                    
-                </div>
-                <div className="form-group">
-                    <label htmlFor="telephone">Contact</label>
-                    <input type="tel" className="form-control" name="telephone" placeholder="Enter contact" value={telephone} onChange={(e)=>{setTelephone(e.target.value)}} required />
-                    
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" name="password" placeholder="Enter password" value={password} onChange={(e)=>{setPassword(e.target.value)}} required />
-                    
-                </div>
-                <div className="form-group mt-3">
-                    <button type="submit" className="btn btn-outline-success w-100">Register</button>
-                </div>
-                <div className="form-group mt-3" onClick={()=>{}}>
-                    {type== "Register" && <div className="form-text fw-bold">Already have an account?<Link to='/login'>Login</Link></div>}
-                    {type== "Login" && <div className="form-text fw-bold">Don't have an account?<Link to='/signup'>Register</Link></div>}
-                </div>
-          </form> */}
     </div>
     </div>
   )

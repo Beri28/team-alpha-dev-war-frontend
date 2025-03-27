@@ -1,25 +1,28 @@
 import React from 'react';
+import img1 from '../../Assets/imgs/images10.jpg'
+import img2 from '../../Assets/imgs/images7.jpg'
+import img3 from '../../assets/imgs/images13.jpg'
 
 const freelancers = [
   {
     name: 'John Doe',
     skills: ['Web Development', 'React.js', 'Node.js'],
     rating: 4,
-    profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+    profileImage: img1,
     link: '/servicedetails',
   },
   {
     name: 'Jane Smith',
     skills: ['Graphic Design', 'UI/UX Design', 'Figma'],
     rating: 5,
-    profileImage: 'https://randomuser.me/api/portraits/women/2.jpg',
+    profileImage: img2,
     link: '/servicedetails',
   },
   {
     name: 'Michael Johnson',
     skills: ['Content Writing', 'SEO', 'Copywriting'],
     rating: 3,
-    profileImage: 'https://randomuser.me/api/portraits/men/3.jpg',
+    profileImage: img3,
     link: '/servicedetails',
   },
   {

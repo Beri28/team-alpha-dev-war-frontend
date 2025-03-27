@@ -21,6 +21,7 @@ function App() {
     {/* <DataContextProvider> */}
         <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<Home />} />
             <Route exact path="/hire" element={<EmployerPage />} />
             <Route path='/services/:category' element={<Services />} />
             <Route path="/servicedetails" element={<ServiceDetails />} />

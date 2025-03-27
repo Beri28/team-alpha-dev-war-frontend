@@ -41,13 +41,13 @@ const jobsData = [
 ];
 
 const JobList = () => {
-  const [jobs,setJobs]=useState([])
-  async function getJobs(){
-      const resp=await Get('/job/jobs')
-      if(resp) setJobs(resp.data)
-  }
-  getJobs()
-  useEffect(()=>{},[jobs])
+  // const [jobs,setJobs]=useState([jobsData])
+  // async function getJobs(){
+  //     const resp=await Get('/job/jobs')
+  //     if(resp) setJobs([...resp.data,jobs])
+  // }
+  // getJobs()
+  // useEffect(()=>{},[jobs])
   return (
     <>
     <Navbar />
@@ -55,9 +55,9 @@ const JobList = () => {
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
           Available Jobs
         </h1>
-        <div className="flex items-start flex-wrap gap-6">
-          {jobs.map((job) => (
-            <div key={job.id} className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+        <div className="grid sm:grid-cols-3 gap-6">
+          {jobsData.map((job) => (
+            <div key={job.id} className="w-full">
               <Job
                 title={job.title}
                 description={job.description}

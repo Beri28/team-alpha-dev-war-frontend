@@ -11,9 +11,9 @@ function Footer(props) {
                 </div>
                 <div>
                     <ul className='list-none flex flex-col gap-y-5  cursor-pointer'>
-                        <li><Link to="/about"> About Us</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/create_event">Hire</Link></li>
+                        <li><Link to="/"> About Us</Link></li>
+                        <li><Link to="/">Contact Us</Link></li>
+                        <li><Link to="/createjob">Create Job</Link></li>
                     </ul>
                 </div>
                 <div>

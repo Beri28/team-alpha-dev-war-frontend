@@ -19,11 +19,21 @@ function Navbar() {
         return (
             <Box sx={{position:'absolute',top:'3em',right:'9.7em'}}>
                 <Stack className='bg-gray-50' sx={{borderRadius:'5px',position:'absolute',p:2}} >
-                    <MenuItem><Link to="/add">Add service</Link></MenuItem>
+                    <MenuItem>
+                        <Link to="/services/all">Services</Link>
+                    </MenuItem>
                     <Divider />
-                    <MenuItem><Link to="/hire">Coming soon</Link></MenuItem>
+                    <MenuItem>
+                        <Link to="/jobs">Jobs</Link>
+                    </MenuItem>
                     <Divider />
-                    <MenuItem><Link to="/profile">Profile</Link></MenuItem>
+                    <MenuItem>
+                        <Link to="/createjob">Create Job</Link>
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem>
+                        <Link to="/about">About Us</Link>
+                    </MenuItem>
                 </Stack>
             </Box>
         )
@@ -33,11 +43,15 @@ function Navbar() {
             <Box sx={{position:'absolute',top:'3em',right:'9.7em'}}>
                 <Stack className='bg-gray-50' sx={{borderRadius:'5px',position:'absolute',p:2}} >
                     <MenuItem>
-                        <Link to="/hire">Hire</Link>
+                        <Link to="/services/all">Services</Link>
                     </MenuItem>
                     <Divider />
                     <MenuItem>
-                        <Link to="/contact">Contact U</Link>
+                        <Link to="/jobs">Jobs</Link>
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem>
+                        <Link to="/createjob">Create Job</Link>
                     </MenuItem>
                     <Divider />
                     <MenuItem>
@@ -86,9 +100,10 @@ function Navbar() {
                 <div className='max-w-[70%] sm:flex hidden justify-between items-center gap-x-[10em]'>
                     <ul className='list-none flex items-center gap-x-10 links cursor-pointer'>
                         <li><Link to="/services/all">Services</Link></li>
+                        <li><Link to="/jobs">Jobs</Link></li>
                         <li><Link to="/createjob">Create Job</Link></li>
                         <li><Link to="/about"> About Us</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
+                        {/* <li><Link to="/contact">Contact Us</Link></li> */}
                     </ul>
                     <FormControl sx={{display:{md:'flex',sm:'none'}}} className='relative'>
                         <Input
