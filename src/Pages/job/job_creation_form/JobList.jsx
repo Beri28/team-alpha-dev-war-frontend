@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Job from "./Job";
+import Footer from "../../../Components/footer/Footer";
+import Navbar from "../../../Components/navbar/Navbar";
+import { Get } from "../../../functions/apiCalls";
+// import { DataContext } from "../../../context/dataContext";
 
 const jobsData = [
   {
@@ -37,24 +41,35 @@ const jobsData = [
 ];
 
 const JobList = () => {
+  // const [jobs,setJobs]=useState([jobsData])
+  // async function getJobs(){
+  //     const resp=await Get('/job/jobs')
+  //     if(resp) setJobs([...resp.data,jobs])
+  // }
+  // getJobs()
+  // useEffect(()=>{},[jobs])
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-100 min-h-screen min-w-screen">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
-        Available Jobs
-      </h1>
-      <div className="flex flex-wrap gap-6">
-        {jobsData.map((job) => (
-          <div key={job.id} className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
-            <Job
-              title={job.title}
-              description={job.description}
-              location={job.location}
-              salary={job.salary}
-            />
-          </div>
-        ))}
+    <>
+    <Navbar />
+      <div className="max-w-[80%] mx-auto py-6 mb-5">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          Available Jobs
+        </h1>
+        <div className="grid sm:grid-cols-3 gap-6">
+          {jobsData.map((job) => (
+            <div key={job.id} className="w-full">
+              <Job
+                title={job.title}
+                description={job.description}
+                location={job.location}
+                salary={job.salary}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    <Footer />
+    </>
   );
 };
 

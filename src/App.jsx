@@ -9,27 +9,31 @@ import JobSeeker from "./Pages/job/job_seekers/JobSeekers";
 import JobList from "./Pages/job/job_creation_form/JobList";
 import EmployerPage from "./Pages/employers/Employers";
 
-import Service from "./Pages/servicedetails/Service";
-import FreelancersShowcase from "./pages/Gigs/Gigs";
+import ServiceDetails from "./pages/Services/components/ServiceDetail";
+import Services from "./pages/Services/Services";
+import FreelanceOnboarding from "./pages/onboarding/Onboarding";
+import Gig from "./components/gig/Gigs";
+// import DataContextProvider from "./context/dataContext";
 function App() {
-  const {currentUser}=useAuth()
   return (
 
     <>
-    
+    {/* <DataContextProvider> */}
         <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<Home />} />
             <Route exact path="/hire" element={<EmployerPage />} />
-            <Route path='/gigs' element={<FreelancersShowcase />} />
-            <Route path='/gigDetail' element={<FreelancersShowcase />} />
+            <Route path='/services/:category' element={<Services />} />
+            <Route path="/servicedetails" element={<ServiceDetails />} />
+            <Route path="/jobs" element={<JobList />} />
+            <Route path="/onboard" element={<FreelanceOnboarding />} />
             <Route exact path="/employer" element={<EmployerPage />} />
-            <Route exact path="/servicedetails" element={<Service />} />
             <Route exact path="/viewfreelancers" element={<JobSeeker />} />
             <Route exact path="/createjob" element={<JobCreationForm />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
         </Routes>
-      
+    {/* </DataContextProvider> */}
     </>
 
   );
