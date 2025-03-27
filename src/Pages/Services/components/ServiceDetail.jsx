@@ -3,7 +3,7 @@ import { Card, CardContent, Avatar, Typography, Button, responsiveFontSizes } fr
 import Navbar from "../../../Components/navbar/Navbar";
 import Footer from "../../../Components/footer/Footer";
 import { Payment } from "../../../functions/apiCalls";
-import img1 from '../../../Assets/imgsweb.jpg'
+import img1 from '../../../Assets/imgs/web.jpg'
 import img2 from '../../../assets/imgs/writing.jpg'
 import img3 from '../../../assets/imgs/design.jpg'
 import img4 from '../../../assets/imgs/sales-marketing.jpg'
