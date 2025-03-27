@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = 'http://localhost:5000/api/v1' //'https://live.fapshi.com'
+const baseUrl ='https://yahustle.onrender.com' //'http://localhost:5000/api/v1' 
 const headers={
     // apiuser:import.meta.env.apiuser,
     // apikey:import.meta.env.apikey

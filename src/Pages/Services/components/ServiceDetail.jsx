@@ -3,11 +3,16 @@ import { Card, CardContent, Avatar, Typography, Button, responsiveFontSizes } fr
 import Navbar from "../../../Components/navbar/Navbar";
 import Footer from "../../../Components/footer/Footer";
 import { Payment } from "../../../functions/apiCalls";
+import img1 from '../../../Assets/imgsweb.jpg'
+import img2 from '../../../assets/imgs/writing.jpg'
+import img3 from '../../../assets/imgs/design.jpg'
+import img4 from '../../../assets/imgs/sales-marketing.jpg'
+import img5 from '../../../assets/imgs/video.png'
 
 const mockPortfolio = [
-  { id: 1, title: "Website Design", url: "/path/to/image1.jpg" },
-  { id: 2, title: "Logo Design", url: "/path/to/image2.jpg" },
-  { id: 3, title: "App Development", url: "/path/to/image3.jpg"},
+  { id: 1, title: "Website Design", url: img1 },
+  { id: 2, title: "Logo Design", url:img3 },
+  { id: 3, title: "App Development", url:img5},
 ];
 
 const mockReviews = [
@@ -33,7 +38,8 @@ const ServiceDetails = () => {
       const res=await Payment({
         amount:userProfile.hourlyRate,
         email:userProfile.email,
-        message:userProfile.skills[0]
+        message:userProfile.skills[0],
+        redirectUrl: 'https://yahustle.onrender.com'
       })
       console.log(res)
       if(res && res.status===200){
