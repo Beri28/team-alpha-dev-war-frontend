@@ -9,9 +9,42 @@ const JobCreationForm = () => {
     const [deadline, setDeadline] = useState('');
     const [contactInfo, setContactInfo] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle form submission logic here
+        try{
+            // Submit form data to your backend API
+            const response = await fetch('https://yahustle.onrender/api/v1/job/jobs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    jobTitle,
+                    jobDescription,
+                    skills,
+                    budget,
+                    jobType,
+                    deadline,
+                    contactInfo,
+                }),
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log(data);
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+        setJobTitle('');
+        setJobDescription('');
+        setSkills([]);
+        setBudget('');
+        setJobType('');
+        setDeadline('');
+        setContactInfo('');
         console.log({
             jobTitle,
             jobDescription,
@@ -109,6 +142,8 @@ const JobCreationForm = () => {
             <button
                 type="submit"
                 className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
+                disabled={!jobTitle ||!jobDescription ||!skills.length ||!budget ||!jobType ||!deadline ||!contactInfo}
+            
             >
                 Submit Job
             </button>
