@@ -7,9 +7,30 @@ import * as Yup from 'yup'
 function Login() {
     
     const [loading, setLoading] =useState(false)
-    function handleSubmit(values){
-        console.log("submit clicked");
-    }
+    const [forgotPassword, setForgotPassword] = useState(false)
+     async function handleSubmit(values,{resetForm}){
+          setLoading(true)
+        try{ const response = await axios.post('http://localhost:3000/api/v1/auth/login',values,{headers:{
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }}) 
+      const data = response.data
+      localStorage.setItem(data.token)
+      navigate('/')
+      resetForm()
+          
+      setLoading(false)
+      }
+        catch(error){
+            console.log(error)
+            setLoading(false)
+            setForgotPassword(true)
+            alert('Error login in up')
+            resetForm()
+          
+          }
+         
+        }
     const validationSchema = Yup.object({
       email: Yup.string()
        .email('Invalid email')
@@ -39,6 +60,7 @@ function Login() {
       <label htmlFor="l2">Password</label><br />
       <Field className="input" name="password" type="password" placeholder= "Type your password" />
       <ErrorMessage name='password' component="div" className='error' />
+     {forgotPassword && <Link>Forgot Password?</Link>}
       <br />
       <button type="submit" disabled={!isValid || !dirty || loading} >{loading?"Logging in...":"Submit"}</button>
       <p className='signup'>Don't have an account? <Link to="/signup">Sign Up</Link> </p>

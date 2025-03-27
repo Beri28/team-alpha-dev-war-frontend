@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import "./registration.css"
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import {  Link } from'react-router-dom';
+import {  data, Link, useNavigate } from'react-router-dom';
 import { ErrorMessage, Field, Formik,Form } from 'formik';
 import * as  Yup from "yup"
+import axios from 'axios';
 function SignUp() {
+    const navigate = useNavigate()
     const validationSchema= Yup.object({
       name: Yup.string()
        .required('User Name is Required'),
@@ -24,9 +26,27 @@ function SignUp() {
     const [loading,setLoading] = useState(false)
 
 
-   async function handleSubmit(values){
-      console.log(values)
-        console.log("submit clicked");
+   async function handleSubmit(values,{resetForm}){
+      setLoading(true)
+    try{ const response = await axios.post('http://localhost:3000/api/v1/auth/signup',values,{headers:{
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }}) 
+  const data = response.data
+  localStorage.getItem(data.token)
+  navigate('/login')
+  resetForm()
+      
+  setLoading(false)
+  }
+    catch(error){
+        console.log(error)
+        setLoading(false)
+        alert('Error signing up')
+        resetForm()
+      
+      }
+     
     }
         
   return (
